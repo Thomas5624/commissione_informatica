@@ -1,25 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import "tailwindcss";
+
+/* Core color tokens (light) */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --cilto-blue: #1E3A8A; /* Blu scuro */
-  --cilto-accent: #3B82F6; /* Blu di accento */
+  --foreground: #0f1724; /* dark text */
+  --muted: #6b7280;
+  --cilto-blue: #1E3A8A; /* Blu primario */
+  --accent: #3B82F6; /* Blu accento */
+  --card-bg: #ffffff;
+  --card-border: #f3f4f6; /* gray-100 */
+  --header-text: #ffffff;
+  --btn-text: #ffffff;
+  --pink: #ec4899;
+  --gray: #6b7280;
+  --orange: #f97316;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark theme tokens */
+html.dark {
+  --background: #111827;
+  --foreground: #e5e7eb;
+  --muted: #9ca3af;
+  --cilto-blue: #1e40af;
+  --accent: #3b82f6;
+  --card-bg: #1f2937;
+  --card-border: #374151;
+  --header-text: #e5e7eb;
+  --btn-text: #ffffff;
+  --pink: #ec4899;
+  --gray: #6b7280;
+  --orange: #f97316;
 }
 
+/* Base styles using tokens */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f8f9fb;
+  background-color: var(--background);
   color: var(--foreground);
+  transition: background-color 150ms ease, color 150ms ease;
 }
 
-.cilto-bg-blue {
-  background-color: var(--cilto-blue);
+/* Semantic utility classes to use across the app. Prefer these over hard-coded tailwind colors */
+.bg-app { background-color: var(--background); }
+.text-foreground { color: var(--foreground); }
+.text-muted-foreground { color: var(--muted); }
+.header-bg { background-color: var(--cilto-blue); }
+.header-text { color: var(--header-text); }
+.accent { color: var(--accent); }
+.bg-accent { background-color: var(--accent); }
+
+/* Border utilities mapped to CSS tokens */
+.border-accent { border-color: var(--accent); }
+
+.text-accent { color: var(--accent); }
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--foreground);
+  border: 1px solid var(--card-border);
 }
+
+.btn-primary {
+  background-color: var(--cilto-blue);
+  color: var(--btn-text);
+}
+.btn-primary:hover { filter: brightness(1.05); }
+
+/* small helpers for header/footer brand areas */
+.brand-logo-bg { background-color: var(--card-bg); }
+
+/* ensure some existing classes that rely on white/black get a sensible mapping in dark mode */
+html.dark .text-white { color: var(--header-text); }
+html.dark .bg-white { background-color: var(--card-bg); }
+html.dark .bg-gray-50 { background-color: var(--card-bg); }
+html.dark .border-gray-100 { border-color: var(--card-border); }
+
+.bg-orange { background-color: var(--orange); }
+.text-orange { color: var(--orange); }
+.border-orange { border-color: var(--orange); }
+.bg-pink { background-color: var(--pink); }
+.text-pink { color: var(--pink); }
+.border-pink { border-color: var(--pink); }
+.bg-gray { background-color: var(--gray); }
+.text-gray { color: var(--gray); }
+.border-gray { border-color: var(--gray); }
+

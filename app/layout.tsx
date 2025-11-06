@@ -4,6 +4,8 @@ import Image from "next/image";
 import "./globals.css";
 import MobileMenu from "./components/MobileMenu";
 import DesktopNav from "./components/DesktopNav";
+import { ThemeProvider } from "./components/ThemeProvider";
+import ThemeSwitch from "./components/ThemeSwitch";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,12 +37,13 @@ export default function RootLayout({
 
   return (
     <html lang="it" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <header className="cilto-bg-blue shadow-lg sticky top-0 z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-app text-app`}>
+        <ThemeProvider>
+          <header className="header-bg shadow-lg sticky top-0 z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
             {/* Logo e Titolo */}
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full brand-logo-bg flex items-center justify-center">
                 <Image
                   src="/progetti/ciltosilogo.jpg"
                   alt="CIL Tosi Logo"
@@ -49,26 +52,27 @@ export default function RootLayout({
                   className="rounded-full"
                 />
               </div>
-              <h1 className="text-white text-xl font-bold tracking-tight">
-                CILTOsi
+              <h1 className="header-text text-xl font-bold tracking-tight">
+                CILTosi
               </h1>
             </div>
 
-            {/* Navigazione e Menu Mobile */}
-            <div className="flex items-center">
+              {/* Navigazione, switch tema e Menu Mobile */}
+              <div className="flex items-center space-x-3">
                 <DesktopNav navItems={navItems} />
+                <ThemeSwitch />
                 <MobileMenu navItems={navItems} />
-            </div>
+              </div>
           </div>
         </header>
+          <main>{children}</main>
 
-        <main>{children}</main>
-
-        <footer className="cilto-bg-blue mt-12 py-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-300">
-            &copy; 2025 CILTOsi. Powered by Studenti Informatici.
-          </div>
-        </footer>
+          <footer className="header-bg mt-12 py-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm header-text">
+              &copy; 2025 CILTOsi. Powered by Studenti Informatici.
+            </div>
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );

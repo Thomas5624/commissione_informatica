@@ -13,7 +13,8 @@ export default function ThemeSwitch() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-md hover:bg-blue-700 text-white"
+      aria-label="Toggle theme"
+      className="p-2 rounded-md header-text hover:opacity-90"
     >
       {theme === 'light' ? <Moon className="h-6 w-6" /> : <Sun className="h-6 w-6" />}
     </button>

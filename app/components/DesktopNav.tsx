@@ -35,7 +35,7 @@ export default function DesktopNav({ navItems }: DesktopNavProps) {
   }, [pathname, navItems]);
 
   return (
-    <nav className="hidden lg:flex text-white text-sm font-medium relative">
+    <nav className="hidden lg:flex header-text text-sm font-medium relative">
       <ul className="flex space-x-6">
         {navItems.map((item, index) => {
           const isActive = pathname === item.href;
@@ -43,9 +43,12 @@ export default function DesktopNav({ navItems }: DesktopNavProps) {
             <li key={item.name}>
               <Link
                 href={item.href}
-                ref={(el) => (navRefs.current[index] = el)}
-                className={`hover:text-blue-300 transition duration-150 block py-1 ${
-                  isActive ? "text-blue-300" : ""
+                ref={(el) => {
+                  // assign to the refs array but do not return the value
+                  navRefs.current[index] = el;
+                }}
+                className={`hover:accent transition duration-150 block py-1 ${
+                  isActive ? "accent" : ""
                 }`}
               >
                 {item.name}
@@ -55,7 +58,7 @@ export default function DesktopNav({ navItems }: DesktopNavProps) {
         })}
       </ul>
       <div
-        className="absolute bottom-0 h-0.5 bg-blue-300 transition-all duration-300 ease-in-out"
+        className="absolute bottom-0 h-0.5 bg-accent transition-all duration-300 ease-in-out"
         style={{ left: underlineStyle.left, width: underlineStyle.width }}
       />
     </nav>
