@@ -125,5 +125,51 @@ La tecnologia è ancora in fase sperimentale e serve molta cautela: i risultati 
 Secondo il team, la simulazione ha richiesto minuti, mentre un supercomputer classico avrebbe impiegato tempi impraticabili. Il metodo sfrutta il quantum annealing, diverso dall'approccio dei computer quantistici universali. L'annuncio ha suscitato attenzione ma anche critiche: alcuni ricercatori sostengono che tecniche classiche ottimizzate possono competere con i risultati quantistici.
 
 Il dibattito rimane aperto, ma se confermato il risultato potrebbe accelerare la progettazione di nuovi materiali e avere impatti pratici in elettronica ed energia.`
-  }
+  },
+    {
+    title: "Storia di linux",
+    description: "la rivoluzione silenziosa dell- open source",
+  category: "Hardware & Software",
+    imageUrl: "/newsletter/linux.webp",
+    content: `📍 Le origini: un kernel nato per curiosità
+
+Era il 25 agosto 1991 quando Linus Torvalds, giovane studente di informatica all’Università di Helsinki, pubblicò un messaggio sul newsgroup “comp.os.minix” annunciando la nascita di un nuovo kernel Unix-like. Torvalds, insoddisfatto del sistema Minix — un sistema operativo didattico sviluppato da Andrew Tanenbaum — decise di scrivere un kernel che sfruttasse al meglio l’architettura a 32 bit del suo nuovo PC basato su processore Intel 80386.
+
+Nel suo messaggio, Torvalds scrisse: “È solo un hobby, non sarà mai qualcosa di grande o professionale come GNU”. Quella frase, oggi, suona ironica: Linux è diventato uno dei sistemi operativi più influenti della storia.
+
+🧠 La sinergia con il progetto GNU
+
+Linux, inteso come kernel, non era sufficiente per costituire un sistema operativo completo. Per questo, Torvalds integrò il suo lavoro con gli strumenti del progetto GNU, avviato da Richard Stallman nel 1983 per creare un sistema operativo libero. La fusione tra il kernel Linux e il software GNU diede vita al sistema GNU/Linux, distribuito sotto licenza GPL (General Public License), che garantisce libertà d’uso, modifica e distribuzione.
+
+🌐 La crescita della community e delle distribuzioni
+
+Fin dai primi anni, Linux attirò l’interesse di sviluppatori, studenti e ricercatori. La community contribuì con codice, documentazione e nuove funzionalità. Nel 1993 nacque Debian, una delle prime distribuzioni Linux, seguita da Red Hat, Slackware e, più tardi, Ubuntu nel 2004.
+
+Oggi esistono centinaia di distribuzioni Linux, ciascuna con caratteristiche specifiche: alcune orientate alla semplicità d’uso (come Ubuntu), altre alla stabilità e sicurezza (come CentOS), altre ancora alla personalizzazione estrema (come Arch Linux).
+
+🏢 L’adozione aziendale e istituzionale
+
+Negli anni 2000, Linux ha iniziato a essere adottato da grandi aziende e istituzioni. Google, Amazon, IBM, Oracle, Microsoft e persino la NASA utilizzano Linux per i loro server e infrastrutture cloud. Il sistema operativo è diventato lo standard per i server web, i supercomputer (oltre il 90% usa Linux) e i sistemi embedded.
+
+Nel settore pubblico, numerosi governi hanno scelto Linux per motivi di sicurezza, trasparenza e indipendenza tecnologica. In Italia, la Regione Emilia-Romagna e il Comune di Bolzano sono tra gli enti che hanno adottato soluzioni basate su Linux.
+
+📱 Linux ovunque: Android, IoT e automotive
+
+Linux non è solo sui server. Il sistema operativo è alla base di Android, il sistema mobile più diffuso al mondo. È presente nei dispositivi IoT, nei router, nei sistemi di infotainment delle automobili e persino nei satelliti.
+
+Il kernel Linux, oggi, supporta oltre 30 architetture hardware e contiene più di 28 milioni di righe di codice, frutto del lavoro di oltre 21.000 sviluppatori da tutto il mondo.
+
+🔍 Perché Linux ha avuto successo?
+
+• Licenza libera: la GPL ha permesso la diffusione e la modifica del codice senza restrizioni commerciali.
+• Community globale: migliaia di sviluppatori contribuiscono ogni anno.
+• Stabilità e sicurezza: Linux è noto per la sua robustezza, ideale per ambienti critici.
+• Adattabilità: funziona su dispositivi che vanno dai microcontrollori ai supercomputer.
+• Costi ridotti: l’assenza di licenze proprietarie ha favorito l’adozione in ambito aziendale e pubblico.
+📅 Conclusione: un futuro ancora aperto
+
+A oltre trent’anni dalla sua nascita, Linux continua a evolversi. Il suo modello di sviluppo aperto e collaborativo ha dimostrato che l’innovazione non è monopolio delle grandi aziende, ma può nascere dalla passione e dalla condivisione.
+
+In un mondo sempre più digitale, Linux rappresenta non solo una scelta tecnologica, ma anche una visione etica: quella di un software libero, costruito da tutti e per tutti.`,
+}
 ];
