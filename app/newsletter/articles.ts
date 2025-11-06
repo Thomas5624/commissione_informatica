@@ -6,6 +6,7 @@ export interface ArticleData {
   content: string;
   publishDate?: string;
   readTime?: string;
+  author?: string;
 }
 
 export const articles: ArticleData[] = [
