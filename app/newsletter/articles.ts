@@ -172,6 +172,6 @@ Il kernel Linux, oggi, supporta oltre 30 architetture hardware e contiene più d
 A oltre trent’anni dalla sua nascita, Linux continua a evolversi. Il suo modello di sviluppo aperto e collaborativo ha dimostrato che l’innovazione non è monopolio delle grandi aziende, ma può nascere dalla passione e dalla condivisione.
 
 In un mondo sempre più digitale, Linux rappresenta non solo una scelta tecnologica, ma anche una visione etica: quella di un software libero, costruito da tutti e per tutti.`,
-author: "Thomas Terrana"
+author: "Mattia Garavaglia"
 }
 ];
