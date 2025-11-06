@@ -124,6 +124,6 @@ La tecnologia è ancora in fase sperimentale e serve molta cautela: i risultati 
 
 Secondo il team, la simulazione ha richiesto minuti, mentre un supercomputer classico avrebbe impiegato tempi impraticabili. Il metodo sfrutta il quantum annealing, diverso dall'approccio dei computer quantistici universali. L'annuncio ha suscitato attenzione ma anche critiche: alcuni ricercatori sostengono che tecniche classiche ottimizzate possono competere con i risultati quantistici.
 
-Il dibattito rimane aperto, ma se confermato il risultato potrebbe accelerare la progettazione di nuovi materiali e avere impatti pratici in elettronica ed energia.`
+il dibattito rimane aperto, ma se confermato il risultato potrebbe accelerare la progettazione di nuovi materiali e avere impatti pratici in elettronica ed energia.`
   }
 ];
