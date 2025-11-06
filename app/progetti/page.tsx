@@ -124,7 +124,7 @@ export default function ProgettiPage() {
       {/* Griglia Progetti (Nuova UX) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={index} className="card rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col">
+          <div key={index} className="card rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col h-full">
             <div className="relative h-40 w-full">
               <Image
                 src={project.image}
@@ -135,7 +135,7 @@ export default function ProgettiPage() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <div className="p-6 flex-grow">
+            <div className="p-6 flex flex-col flex-grow">
               {/* Icona e Stato */}
               <div className="flex justify-between items-start mb-4">
                 <div className="accent bg-accent/10 p-3 rounded-full">
@@ -157,8 +157,8 @@ export default function ProgettiPage() {
                 {project.description}
               </p>
 
-              {/* Progresso */}
-              <div className="mt-4">
+              {/* Progresso - rimane in basso della colonna */}
+              <div className="mt-4 mt-auto">
                 <div className="flex justify-between text-sm font-medium text-muted-foreground mb-1">
                   <span>Progresso</span>
                   <span className="accent">{project.percentage}%</span>
