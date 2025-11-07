@@ -124,7 +124,7 @@ export default function ProgettiPage() {
       {/* Griglia Progetti (Nuova UX) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100 flex flex-col">
+          <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col">
             <div className="relative h-40 w-full">
               <Image
                 src={project.image}
@@ -135,10 +135,10 @@ export default function ProgettiPage() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <div className="p-6 flex-grow">
+            <div className="p-6 flex-grow flex flex-col">
               {/* Icona e Stato */}
               <div className="flex justify-between items-start mb-4">
-                <div className="text-indigo-600 bg-indigo-100 p-3 rounded-full">
+                <div className="text-indigo-600">
                   {project.icon}
                 </div>
                 <span className={`inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full ${
@@ -158,7 +158,7 @@ export default function ProgettiPage() {
               </p>
 
               {/* Progresso */}
-              <div className="mt-4">
+              <div className="mt-auto pt-4">
                 <div className="flex justify-between text-sm font-medium text-gray-600 mb-1">
                   <span>Progresso</span>
                   <span className="text-indigo-600">{project.percentage}%</span>
@@ -173,7 +173,7 @@ export default function ProgettiPage() {
             </div>
 
             {/* Azione */}
-            <div className="p-6 pt-0 border-t border-gray-100">
+            <div className="p-6 pt-0">
               <button 
                 onClick={() => {
                   setSelectedProject(project);
@@ -203,7 +203,7 @@ export default function ProgettiPage() {
             className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] relative animate-modalOpen overflow-hidden flex flex-col"
           >
             {/* Header sticky */}
-            <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4 flex justify-between items-center">
+            <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md px-6 py-4 flex justify-between items-center">
               <h2 className="text-2xl font-bold text-gray-800">{selectedProject.name}</h2>
               <button 
                 onClick={() => setIsModalOpen(false)}
@@ -228,7 +228,7 @@ export default function ProgettiPage() {
                 </div>
 
                 {/* Overview con bordo e sfondo */}
-                <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-100">
+                <div className="mb-8 p-6 bg-gray-100 rounded-xl">
                   <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
                     <BookOpen className="w-5 h-5 text-indigo-600" />
                     Overview
@@ -246,7 +246,7 @@ export default function ProgettiPage() {
                   </h3>
                   <div className="grid gap-3">
                     {selectedProject.documentation?.features.map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-lg border border-gray-100 hover:border-indigo-200 transition-colors">
+                      <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-lg hover:border-indigo-200 transition-colors">
                         <div className="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-2" />
                         <p className="text-gray-600">{feature}</p>
                       </div>
@@ -280,7 +280,7 @@ export default function ProgettiPage() {
                   </h3>
                   <div className="grid gap-3">
                     {selectedProject.documentation?.team.map((member, index) => (
-                      <div key={index} className="p-4 bg-white rounded-lg border border-gray-100 hover:border-indigo-200 transition-colors">
+                      <div key={index} className="p-4 bg-white rounded-lg hover:border-indigo-200 transition-colors">
                         <p className="text-gray-600">{member}</p>
                       </div>
                     ))}
@@ -319,7 +319,7 @@ export default function ProgettiPage() {
       )}
 
       {/* Sezione CTA / Contribuisci */}
-      <div className="mt-20 text-center bg-white rounded-xl shadow-lg p-8 md:p-12 border border-gray-100">
+      <div className="mt-20 text-center bg-white rounded-xl shadow-lg p-8 md:p-12">
         <h3 className="text-3xl font-bold text-gray-800 mb-4">
           Hai un'idea per un nuovo progetto?
         </h3>

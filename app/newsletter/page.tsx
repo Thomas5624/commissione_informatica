@@ -92,7 +92,7 @@ export default function NewsletterPage() {
       </section>
 
       {/* Sezione CTA per Contribuire */}
-      <div className="mt-20 text-center bg-white rounded-xl shadow-lg p-8 md:p-12 border border-gray-100">
+  <div className="mt-20 text-center bg-white rounded-xl shadow-lg p-8 md:p-12">
         <h3 className="text-3xl font-bold text-gray-800 mb-4">
           Hai una notizia interessante da condividere?
         </h3>

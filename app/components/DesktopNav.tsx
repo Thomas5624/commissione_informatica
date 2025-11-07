@@ -43,7 +43,7 @@ export default function DesktopNav({ navItems }: DesktopNavProps) {
             <li key={item.name}>
               <Link
                 href={item.href}
-                ref={(el) => (navRefs.current[index] = el)}
+                ref={(el) => { navRefs.current[index] = el; }}
                 className={`hover:text-blue-300 transition duration-150 block py-1 ${
                   isActive ? "text-blue-300" : ""
                 }`}
