@@ -4,9 +4,14 @@ import { ArrowLeft } from "lucide-react";
 import { createSlug } from "../../utils/slug";
 import { articles } from "../articles";
 
-export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  // params is a promise in Next.js — unwrap it
-  const { slug } = await params;
+export async function generateStaticParams() {
+  return articles.map((article) => ({
+    slug: createSlug(article.title),
+  }));
+}
+
+export default function ArticlePage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   // Helpful debug info when article not found
   const article = articles.find((a) => createSlug(a.title) === slug);
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 interface MobileMenuProps {
   navItems: { name: string; href: string }[];
@@ -36,14 +37,14 @@ export default function MobileMenu({ navItems }: MobileMenuProps) {
           </div>
           <nav className="flex flex-col items-center space-y-6 text-2xl font-semibold text-white mt-10">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="hover:text-blue-300 transition duration-150"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
