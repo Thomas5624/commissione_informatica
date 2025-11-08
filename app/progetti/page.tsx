@@ -57,8 +57,8 @@ export default function ProgettiPage() {
           "Sofia Verdi - Backend Developer",
           "Alessandro Neri - UI/UX Designer"
         ],
-        repository: "https://github.com/ciltosi/gestione-arturiadi",
-        liveSite: "https://arturiadi.ciltosi.it"
+        repository: "https://github.com/commissione-informatica/gestione-arturiadi",
+        liveSite: "https://arturiadi.commissione-informatica.it"
       }
     },
     {
@@ -117,7 +117,7 @@ export default function ProgettiPage() {
         </h2>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto">
           Scopri tutte le iniziative completate, in corso di sviluppo e le idee
-          future del team CILTOsi.
+          future del team Commissione Informatica.
         </p>
       </div>
 
@@ -328,7 +328,7 @@ export default function ProgettiPage() {
           Unisciti a noi o proponi la tua idea!
         </p>
         <a
-          href="#"
+          href="mailto:commissioneinformaticatosi@gmail.com?subject=Proposta%20Nuovo%20Progetto&body=Ciao%20Commissione%20Informatica,%0D%0A%0D%0Avorrei%20proporre%20un%20nuovo%20progetto.%0D%0A%0D%0A**Nome%20del%20progetto:**%20[Inserire%20qui%20il%20nome%20del%20progetto]%0D%0A%0D%0A**Breve%20descrizione:**%20[Inserire%20qui%20una%20breve%20descrizione%20del%20progetto]%0D%0A%0D%0A**Obiettivi:**%20[Elencare%20qui%20gli%20obiettivi%20del%20progetto]%0D%0A%0D%0AGrazie!%0D%0A[Il%20tuo%20nome]"
           className="inline-block bg-orange-500 text-white font-semibold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition duration-300 shadow-lg"
         >
           Proponi un'Idea

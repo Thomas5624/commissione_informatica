@@ -173,20 +173,19 @@ export default function ChiSiamoPage() {
       </section>
 
       {/* Sezione 3: Invito all'Azione (CTA) */}
-      <section className="bg-indigo-600 text-white p-8 md:p-12 rounded-xl text-center shadow-xl">
+      <section className="bg-gray-500 text-white p-8 md:p-12 rounded-xl text-center shadow-xl">
         <h3 className="text-3xl font-bold mb-4">
-          Unisciti alla Commissione Informatica!
+          Le Iscrizioni sono Chiuse
         </h3>
         <p className="mb-6 max-w-3xl mx-auto opacity-90">
-          Se sei uno studente con la passione per l'informatica e la voglia di
-          lasciare un segno nella tua scuola, ti aspettiamo.
+          Le iscrizioni per quest'anno sono terminate. Torna a trovarci il prossimo anno per nuove opportunità!
         </p>
-        <a
-          href="#"
-          className="inline-block bg-white text-indigo-600 font-semibold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 shadow-lg"
+        <button
+          disabled
+          className="inline-block bg-gray-400 text-gray-700 font-semibold py-3 px-8 rounded-full text-lg cursor-not-allowed"
         >
-          Scopri Come Partecipare
-        </a>
+          Iscrizioni Chiuse
+        </button>
       </section>
     </main>
   );

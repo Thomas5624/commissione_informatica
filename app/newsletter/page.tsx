@@ -100,7 +100,7 @@ export default function NewsletterPage() {
           La nostra newsletter è aperta ai contributi. Se hai un argomento tech che vuoi esplorare, faccelo sapere!
         </p>
         <a
-          href="#"
+          href="mailto:commissioneinformaticatosi@gmail.com?subject=Proposta%20Articolo%20Newsletter&body=Ciao%20Commissione%20Informatica,%0D%0A%0D%0Avorrei%20proporre%20un%20articolo%20per%20la%20vostra%20newsletter.%0D%0A%0D%0A**Titolo%20proposto:**%20[Inserire%20qui%20il%20titolo]%0D%0A%0D%0A**Breve%20descrizione:**%20[Inserire%20qui%20una%20breve%20descrizione%20dell'articolo]%0D%0A%0D%0A**Fonti%20(se%20disponibili):**%20[Inserire%20qui%20eventuali%20link%20a%20fonti]%0D%0A%0D%0AGrazie!%0D%0A[Il%20tuo%20nome]"
           className="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full text-lg hover:bg-indigo-700 transition duration-300 shadow-lg"
         >
           Proponi un Articolo

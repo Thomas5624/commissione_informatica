@@ -25,10 +25,10 @@ export default function ContattiPage() {
             <div>
               <h3 className="text-xl font-bold text-gray-900">Email della Commissione</h3>
               <p className="text-gray-600">Per domande ufficiali, collaborazioni o proposte di progetto.</p>
-              <p className="text-sm font-medium text-indigo-500 mt-1">commissione.informatica@tosi.va.it</p>
+              <p className="text-sm font-medium text-indigo-500 mt-1">commissioneinformaticatosi@gmail.com</p>
             </div>
           </div>
-          <a href="mailto:commissione.informatica@tosi.va.it" className="flex-shrink-0 bg-indigo-500 text-white font-semibold py-2 px-4 rounded-full text-sm hover:bg-indigo-600 transition duration-300 flex items-center space-x-1">
+          <a href="mailto:commissioneinformaticatosi@gmail.com" className="flex-shrink-0 bg-indigo-500 text-white font-semibold py-2 px-4 rounded-full text-sm hover:bg-indigo-600 transition duration-300 flex items-center space-x-1">
             Invia Email
             <ArrowRight className="w-4 h-4 ml-1" />
           </a>
@@ -43,7 +43,8 @@ export default function ContattiPage() {
             <div>
               <h3 className="text-xl font-bold text-gray-900">Pagina Instagram (Commissione)</h3>
               <p className="text-gray-600">Segui i nostri aggiornamenti, eventi e progetti in tempo reale.</p>
-              <p className="text-sm font-medium text-pink-500 mt-1">@cilto_si</p>
+              <p className="text-sm font-medium text-pink-500 mt-1">@commissione_informatica_tosi
+              </p>
             </div>
           </div>
           <a href="https://www.instagram.com/commissione_informatica_tosi/?igsh=MWVjb3o1enpsdHdqag%3D%3D#" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 bg-pink-500 text-white font-semibold py-2 px-4 rounded-full text-sm hover:bg-pink-600 transition duration-300 flex items-center space-x-1">
@@ -61,7 +62,7 @@ export default function ContattiPage() {
             <div>
               <h3 className="text-xl font-bold text-gray-900">Pagina Instagram (Presidente)</h3>
               <p className="text-gray-600">Contatta direttamente il Presidente per questioni istituzionali o urgenti.</p>
-              <p className="text-sm font-medium text-pink-400 mt-1">@il_presidente_tosi</p>
+              <p className="text-sm font-medium text-pink-400 mt-1">@solferino.tech</p>
             </div>
           </div>
           <a href="https://www.instagram.com/solferino.tech/?igsh=MTdrMGNyODZ4b3Zsbg%3D%3D" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 bg-pink-400 text-white font-semibold py-2 px-4 rounded-full text-sm hover:bg-pink-500 transition duration-300 flex items-center space-x-1">
@@ -79,10 +80,10 @@ export default function ContattiPage() {
             <div>
               <h3 className="text-xl font-bold text-gray-900">Sito Ufficiale del Presidente</h3>
               <p className="text-gray-600">Accesso al sito personale o istituzionale del Presidente.</p>
-              <p className="text-sm font-medium text-gray-500 mt-1">https://presidente.tosi.va.it</p>
+              <p className="text-sm font-medium text-gray-500 mt-1">https://www.solferinotech.com/</p>
             </div>
           </div>
-          <a href="https://www.solferinotech.com/about-me/" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 bg-gray-500 text-white font-semibold py-2 px-4 rounded-full text-sm hover:bg-gray-600 transition duration-300 flex items-center space-x-1">
+          <a href="https://www.solferinotech.com/" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 bg-gray-500 text-white font-semibold py-2 px-4 rounded-full text-sm hover:bg-gray-600 transition duration-300 flex items-center space-x-1">
             Visita il Sito
             <ArrowRight className="w-4 h-4 ml-1" />
           </a>

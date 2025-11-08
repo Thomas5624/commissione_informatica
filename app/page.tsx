@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Activity, Lightbulb, CheckCircle } from "lucide-react";
+import { ArrowRight, Code, BookOpen, Users, Activity, Lightbulb, CheckCircle } from "lucide-react";
 
 export default function Home() {
   const featuredProjects = [
@@ -24,13 +24,31 @@ export default function Home() {
     },
   ];
 
+  const activities = [
+    {
+      title: "Sviluppo Software",
+      description: "Creiamo soluzioni software su misura per le esigenze della nostra scuola, utilizzando le tecnologie più moderne e performanti.",
+      icon: <Code className="w-10 h-10 text-indigo-600" />
+    },
+    {
+      title: "Formazione e Condivisione",
+      description: "Organizziamo workshop, seminari e incontri per diffondere la cultura digitale e condividere le nostre conoscenze con studenti e docenti.",
+      icon: <BookOpen className="w-10 h-10 text-indigo-600" />
+    },
+    {
+      title: "Supporto Tecnico",
+      description: "Offriamo supporto tecnico per gli eventi scolastici e le infrastrutture informatiche, garantendo che tutto funzioni al meglio.",
+      icon: <Users className="w-10 h-10 text-indigo-600" />
+    }
+  ];
+
   return (
     <main>
       {/* Hero Section */}
       <section className="relative bg-gray-900 text-white">
         <div className="absolute inset-0">
           <Image
-            src="/progetti/robotgreen.jpg" // Using one of the project images as a background
+            src="/banner.png"
             alt="Background"
             layout="fill"
             objectFit="cover"
@@ -57,10 +75,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
-      <section className="py-20 bg-gray-100">
+      {/* What We Do Section */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            <h2 className="text-base font-semibold text-indigo-600 tracking-wider uppercase">La Nostra Missione</h2>
+            <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+              Portare l'Innovazione nella Didattica
+            </p>
+            <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+              Il nostro obiettivo è quello di arricchire l'esperienza scolastica attraverso la tecnologia. Sviluppiamo progetti che non solo risolvono problemi pratici, ma che stimolano anche la creatività e la collaborazione tra studenti e docenti. Crediamo in un approccio pratico, dove ogni idea può trasformarsi in un'opportunità di crescita.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+              Le Nostre Attività
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
+              Dalla programmazione alla formazione, ecco come contribuiamo a migliorare la nostra scuola.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-8 lg:grid-cols-3">
+            {activities.map((activity) => (
+              <div key={activity.title} className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center">
+                <div className="mb-4">
+                  {activity.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800">{activity.title}</h3>
+                <p className="mt-2 text-gray-600 text-sm">{activity.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
               Progetti in Evidenza
             </h2>
@@ -68,29 +126,54 @@ export default function Home() {
               Una selezione dei progetti che mostrano la nostra passione e il nostro impegno.
             </p>
           </div>
-          <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <div key={project.name} className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col group">
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={project.image}
-                    alt={`Immagine del progetto ${project.name}`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <h3 className="text-xl font-bold text-gray-800">{project.name}</h3>
-                  <p className="mt-2 text-gray-600 text-sm flex-grow">{project.description}</p>
-                  <div className="mt-4">
-                    <Link href={project.href} className="font-semibold text-indigo-600 hover:text-indigo-500">
-                      Scopri di più <span aria-hidden="true">&rarr;</span>
-                    </Link>
-                  </div>
+          <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
+            {/* Main Project */}
+            <div className="lg:col-span-2 bg-gray-50 rounded-xl shadow-lg overflow-hidden flex flex-col group">
+              <div className="relative h-64 w-full">
+                <Image
+                  src={featuredProjects[0].image}
+                  alt={`Immagine del progetto ${featuredProjects[0].name}`}
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-8 flex-grow flex flex-col">
+                <h3 className="text-2xl font-bold text-gray-800">{featuredProjects[0].name}</h3>
+                <p className="mt-3 text-gray-600 flex-grow">{featuredProjects[0].description}</p>
+                <div className="mt-6">
+                  <Link href={featuredProjects[0].href} className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    Scopri di più <span aria-hidden="true">&rarr;</span>
+                  </Link>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Side Projects */}
+            <div className="space-y-8">
+              {featuredProjects.slice(1).map((project) => (
+                <div key={project.name} className="bg-gray-50 rounded-xl shadow-lg overflow-hidden flex flex-col group">
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={project.image}
+                      alt={`Immagine del progetto ${project.name}`}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6 flex-grow flex flex-col">
+                    <h3 className="text-xl font-bold text-gray-800">{project.name}</h3>
+                    <p className="mt-2 text-gray-600 text-sm flex-grow">{project.description}</p>
+                    <div className="mt-4">
+                      <Link href={project.href} className="font-semibold text-indigo-600 hover:text-indigo-500">
+                        Scopri di più <span aria-hidden="true">&rarr;</span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
