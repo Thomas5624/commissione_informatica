@@ -10,12 +10,18 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function ArticlePage({ params }: { params: { slug: string } }) {
+  const { slug } = await params;
   // Helpful debug info when article not found
   const article = articles.find((a) => createSlug(a.title) === slug);
 
   if (!article) {
+    console.log("Article not found for slug:", slug);
+    console.log("Available article slugs:");
+    articles.forEach((a) => {
+      const generatedSlug = createSlug(a.title);
+      console.log(`- ${a.title} (generated slug: ${generatedSlug})`);
+    });
     return (
       <div className="max-w-3xl mx-auto px-4 py-16">
         <h1 className="text-2xl font-bold">Articolo non trovato</h1>
