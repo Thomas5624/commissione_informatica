@@ -57,7 +57,6 @@ export default function ProgettiPage() {
           "Federico Garufi",
           "Matteo Aliverti",
         ],
-        repository: "https://github.com/commissione-informatica/gestione-arturiadi",
         liveSite: "https://arturiadi.commissione-informatica.it"
       }
     },
@@ -277,19 +276,18 @@ export default function ProgettiPage() {
           {/* Modal Content */}
           <div 
             onClick={e => e.stopPropagation()}
-            className={`${theme === 'light' ? 'bg-white' : 'bg-gray-900'} rounded-2xl max-w-3xl w-full max-h-[90vh] relative animate-modalOpen overflow-hidden flex flex-col`}
+            className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] relative animate-modalOpen overflow-hidden flex flex-col"
           >
             {/* Header sticky */}
-                        <div className={`sticky top-0 z-10 ${theme === 'light' ? 'bg-white/80' : 'bg-gray-900/80'} backdrop-blur-md px-6 py-4 flex justify-between items-center`}>
-                          <h2 className={`text-2xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>{selectedProject.name}</h2>
-                          <button
-                            onClick={() => setIsModalOpen(false)}
-                            className={`p-2 ${theme === 'light' ? 'hover:bg-gray-100/80' : 'hover:bg-gray-800/80'} rounded-full transition-colors`}
-                          >
-                            <X className={`w-6 h-6 ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`} />
-                          </button>
-                        </div>            
-            {/* Contenuto scrollabile */}
+                                    <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md px-6 py-4 flex justify-between items-center">
+                                      <h2 className="text-2xl font-bold text-gray-800">{selectedProject.name}</h2>
+                                      <button
+                                        onClick={() => setIsModalOpen(false)}
+                                        className="p-2 hover:bg-gray-100/80 rounded-full transition-colors"
+                                      >
+                                        <X className="w-6 h-6 text-gray-600" />
+                                      </button>
+                                    </div>            {/* Contenuto scrollabile */}
             <div className="overflow-y-auto flex-1">
               <div className="p-6">
                 {/* Immagine principale con overlay gradiente */}
@@ -304,7 +302,7 @@ export default function ProgettiPage() {
                 </div>
 
                 {/* Overview con bordo e sfondo */}
-                <div className={`mb-8 p-6 ${theme === 'light' ? 'bg-gray-100' : 'bg-gray-800'} rounded-xl`}>
+                <div className={`mb-8 p-6 ${theme === 'light' ? 'bg-gray-100' : 'bg-gray-700'} rounded-xl`}>
                   <h3 className={`text-xl font-semibold mb-4 flex items-center gap-2 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>
                     <BookOpen className="w-5 h-5 text-indigo-600" />
                     Overview
@@ -322,9 +320,9 @@ export default function ProgettiPage() {
                   </h3>
                   <div className="grid gap-3">
                     {selectedProject.documentation?.features.map((feature, index) => (
-                      <div key={index} className={`flex items-start gap-3 p-4 ${theme === 'light' ? 'bg-white' : 'bg-gray-800'} rounded-lg hover:border-indigo-200 transition-colors`}>
+                      <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-lg hover:border-indigo-200 transition-colors">
                         <div className="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-2" />
-                        <p className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>{feature}</p>
+                        <p className="text-gray-600">{feature}</p>
                       </div>
                     ))}
                   </div>
@@ -356,8 +354,8 @@ export default function ProgettiPage() {
                   </h3>
                   <div className="grid gap-3">
                     {selectedProject.documentation?.team.map((member, index) => (
-                      <div key={index} className={`p-4 ${theme === 'light' ? 'bg-white' : 'bg-gray-800'} rounded-lg hover:border-indigo-200 transition-colors`}>
-                        <p className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>{member}</p>
+                      <div key={index} className="p-4 bg-white rounded-lg hover:border-indigo-200 transition-colors">
+                        <p className="text-gray-600">{member}</p>
                       </div>
                     ))}
                   </div>
@@ -385,11 +383,11 @@ export default function ProgettiPage() {
       )}
 
       {/* Sezione CTA / Contribuisci */}
-      <div className={`mt-20 text-center ${theme === 'light' ? 'bg-white' : 'bg-gray-800'} rounded-xl shadow-lg p-8 md:p-12`}>
-        <h3 className={`text-3xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'} mb-4`}>
+      <div className="mt-20 text-center bg-white rounded-xl shadow-lg p-8 md:p-12">
+        <h3 className="text-3xl font-bold text-gray-800 mb-4">
           Hai un'idea per un nuovo progetto?
         </h3>
-        <p className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-300'} mb-6 max-w-lg mx-auto`}>
+        <p className="text-gray-600 mb-6 max-w-lg mx-auto">
           Siamo sempre alla ricerca di nuove iniziative per la nostra scuola.
           Unisciti a noi o proponi la tua idea!
         </p>
