@@ -1,8 +1,9 @@
 "use client";
 
-import { Activity, Lightbulb, GraduationCap, CheckCircle, Clock, X, Github, Users, Rocket, Code, BookOpen } from "lucide-react";
+import { Activity, Lightbulb, GraduationCap, CheckCircle, Clock, X, Github, Users, Rocket, Code, BookOpen, Globe } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { useTheme } from "../components/ThemeProvider";
 
 interface Project {
   name: string;
@@ -25,6 +26,7 @@ interface Project {
 export default function ProgettiPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { theme } = useTheme();
 
   const projects: Project[] = [
     {
@@ -45,17 +47,15 @@ export default function ProgettiPage() {
           "Sistema di notifiche per aggiornamenti importanti"
         ],
         techStack: [
-          "Next.js 14",
-          "Prisma ORM",
-          "PostgreSQL",
-          "TailwindCSS",
-          "Socket.io per aggiornamenti real-time"
+          "HTML",
+          "CSS",
+          "Javascript/TypeScript",
+          "PHP",
         ],
         team: [
-          "Marco Rossi - Project Manager",
-          "Luca Bianchi - Frontend Developer",
-          "Sofia Verdi - Backend Developer",
-          "Alessandro Neri - UI/UX Designer"
+          "Emaunuele Solferino",
+          "Federico Garufi",
+          "Matteo Aliverti",
         ],
         repository: "https://github.com/commissione-informatica/gestione-arturiadi",
         liveSite: "https://arturiadi.commissione-informatica.it"
@@ -78,6 +78,22 @@ export default function ProgettiPage() {
       icon: <CheckCircle className="w-6 h-6" />,
       color: "blue",
       image: "/progetti/sitopiante.jpg",
+      documentation: {
+        overview: "Un sito web dedicato alla catalogazione e alla gestione delle piante presenti all'interno del Liceo Tosi. Gli utenti possono esplorare le diverse specie, apprendere informazioni botaniche e contribuire con nuove segnalazioni.",
+        features: [
+          "Catalogo interattivo delle piante con immagini e descrizioni",
+        ],
+        techStack: [
+          "HTML",
+          "CSS",
+          "Javascript/TypeScript",
+        ],
+        team: [
+          "Emaunuele Solferino",
+          "Mattia Garavaglia",
+          "Matteo Aliverti",
+        ],
+      }
     },
     {
       name: "Robot Green",
@@ -87,6 +103,22 @@ export default function ProgettiPage() {
       icon: <CheckCircle className="w-6 h-6" />,
       color: "blue",
       image: "/progetti/robotgreen.jpg",
+      documentation: {
+        overview: "Un robot autonomo progettato per raccogliere e differenziare i rifiuti utilizzando sensori avanzati. Il progetto mira a promuovere la sostenibilità ambientale all'interno della scuola attraverso l'innovazione tecnologica.",
+        features: [
+"Raccolta automatica dei rifiuti tramite sensori",
+"Identificazione e differenziazione dei materiali riciclabili",
+"Sistema di navigazione autonoma per muoversi negli spazi scolastici",
+"Reportistica sulle attività di raccolta e differenziazione"
+        ],
+        techStack: [
+          "Python",
+        ],
+        team: [
+          "Emaunuele Solferino",
+          "Mattia Garavaglia",
+        ],
+      }
     },
     {
       name: "Fantarturiadi",
@@ -96,6 +128,27 @@ export default function ProgettiPage() {
       icon: <CheckCircle className="w-6 h-6" />,
       color: "blue",
       image: "/progetti/fantarturiadi.png",
+      documentation: {
+        overview: "",
+        features: [
+          "Dashboard in tempo reale dei punteggi",
+          "Sistema di registrazione squadre e partecipanti",
+          "Gestione calendario eventi e competizioni",
+          "Statistiche dettagliate per ogni squadra",
+          "Sistema di notifiche per aggiornamenti importanti"
+        ],
+        techStack: [
+          "HTML",
+          "CSS",
+          "Javascript/TypeScript",
+          "PHP",
+        ],
+        team: [
+          "Emaunuele Solferino",
+          "Federico Garufi",
+          "Matteo Aliverti",
+        ],
+      }
     },
     {
       name: "Sito CI",
@@ -105,6 +158,30 @@ export default function ProgettiPage() {
       icon: <CheckCircle className="w-6 h-6" />,
       color: "blue",
       image: "/progetti/sitoci.jpg",
+      documentation: {
+        overview: "Il sito web ufficiale della Commissione Informatica del Liceo Tosi, progettato per presentare i nostri progetti, le attività, il team e fornire un punto di contatto per la comunità scolastica.",
+        features: [
+          "Presentazione dei progetti e delle iniziative della commissione",
+          "Profilo dettagliato dei membri del team",
+          "Modulo di contatto per richieste e iscrizioni",
+          "Sezione newsletter per aggiornamenti e notizie",
+          "Integrazione con i social media della commissione"
+        ],
+        techStack: [
+          "HTML",
+          "CSS",
+          "Javascript/TypeScript",
+        ],
+        team: [
+          "Emaunuele Solferino",
+          "Thomas Terrana",
+          "Leonardo Gentile",
+          "Matteo Aliverti",
+          "Federico Carnini",
+          "Ruben Loiodice",
+        ],
+        repository: "https://github.com/Thomas5624/commissione_informatica",
+      }
     },
   ];
 
@@ -124,7 +201,7 @@ export default function ProgettiPage() {
       {/* Griglia Progetti (Nuova UX) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col">
+          <div key={`${index}-${theme}`} className={`${theme === 'light' ? 'bg-white' : 'bg-gray-800'} rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col`}>
             <div className="relative h-40 w-full">
               <Image
                 src={project.image}
@@ -181,7 +258,7 @@ export default function ProgettiPage() {
                 }}
                 className="w-full bg-indigo-600 text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md hover:shadow-lg"
               >
-                {project.percentage === 100 ? 'Guarda la Documentazione' : 'Visualizza Repository'}
+                {project.percentage === 100 ? 'Guarda la Documentazione' : 'Dettagli Progetto'}
               </button>
             </div>
           </div>
@@ -200,19 +277,18 @@ export default function ProgettiPage() {
           {/* Modal Content */}
           <div 
             onClick={e => e.stopPropagation()}
-            className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] relative animate-modalOpen overflow-hidden flex flex-col"
+            className={`${theme === 'light' ? 'bg-white' : 'bg-gray-900'} rounded-2xl max-w-3xl w-full max-h-[90vh] relative animate-modalOpen overflow-hidden flex flex-col`}
           >
             {/* Header sticky */}
-            <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md px-6 py-4 flex justify-between items-center">
-              <h2 className="text-2xl font-bold text-gray-800">{selectedProject.name}</h2>
-              <button 
-                onClick={() => setIsModalOpen(false)}
-                className="p-2 hover:bg-gray-100/80 rounded-full transition-colors"
-              >
-                <X className="w-6 h-6 text-gray-600" />
-              </button>
-            </div>
-            
+                        <div className={`sticky top-0 z-10 ${theme === 'light' ? 'bg-white/80' : 'bg-gray-900/80'} backdrop-blur-md px-6 py-4 flex justify-between items-center`}>
+                          <h2 className={`text-2xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>{selectedProject.name}</h2>
+                          <button
+                            onClick={() => setIsModalOpen(false)}
+                            className={`p-2 ${theme === 'light' ? 'hover:bg-gray-100/80' : 'hover:bg-gray-800/80'} rounded-full transition-colors`}
+                          >
+                            <X className={`w-6 h-6 ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`} />
+                          </button>
+                        </div>            
             {/* Contenuto scrollabile */}
             <div className="overflow-y-auto flex-1">
               <div className="p-6">
@@ -228,12 +304,12 @@ export default function ProgettiPage() {
                 </div>
 
                 {/* Overview con bordo e sfondo */}
-                <div className="mb-8 p-6 bg-gray-100 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
+                <div className={`mb-8 p-6 ${theme === 'light' ? 'bg-gray-100' : 'bg-gray-800'} rounded-xl`}>
+                  <h3 className={`text-xl font-semibold mb-4 flex items-center gap-2 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>
                     <BookOpen className="w-5 h-5 text-indigo-600" />
                     Overview
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-300'} leading-relaxed`}>
                     {selectedProject.documentation?.overview}
                   </p>
                 </div>
@@ -246,9 +322,9 @@ export default function ProgettiPage() {
                   </h3>
                   <div className="grid gap-3">
                     {selectedProject.documentation?.features.map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-lg hover:border-indigo-200 transition-colors">
+                      <div key={index} className={`flex items-start gap-3 p-4 ${theme === 'light' ? 'bg-white' : 'bg-gray-800'} rounded-lg hover:border-indigo-200 transition-colors`}>
                         <div className="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-2" />
-                        <p className="text-gray-600">{feature}</p>
+                        <p className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>{feature}</p>
                       </div>
                     ))}
                   </div>
@@ -280,8 +356,8 @@ export default function ProgettiPage() {
                   </h3>
                   <div className="grid gap-3">
                     {selectedProject.documentation?.team.map((member, index) => (
-                      <div key={index} className="p-4 bg-white rounded-lg hover:border-indigo-200 transition-colors">
-                        <p className="text-gray-600">{member}</p>
+                      <div key={index} className={`p-4 ${theme === 'light' ? 'bg-white' : 'bg-gray-800'} rounded-lg hover:border-indigo-200 transition-colors`}>
+                        <p className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>{member}</p>
                       </div>
                     ))}
                   </div>
@@ -294,23 +370,13 @@ export default function ProgettiPage() {
                       href={selectedProject.documentation.repository}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors shadow-sm hover:shadow-md"
+                      className="flex-1 flex items-center justify-center gap-2 px-5 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors"
                     >
                       <Github className="w-5 h-5" />
-                      Repository
+                      <span>Visualizza Repository</span>
                     </a>
                   )}
-                  {selectedProject.documentation?.liveSite && (
-                    <a
-                      href={selectedProject.documentation.liveSite}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-colors shadow-sm hover:shadow-md"
-                    >
-                      <Rocket className="w-5 h-5" />
-                      Visita il Sito
-                    </a>
-                  )}
+                  
                 </div>
               </div>
             </div>
@@ -319,11 +385,11 @@ export default function ProgettiPage() {
       )}
 
       {/* Sezione CTA / Contribuisci */}
-      <div className="mt-20 text-center bg-white rounded-xl shadow-lg p-8 md:p-12">
-        <h3 className="text-3xl font-bold text-gray-800 mb-4">
+      <div className={`mt-20 text-center ${theme === 'light' ? 'bg-white' : 'bg-gray-800'} rounded-xl shadow-lg p-8 md:p-12`}>
+        <h3 className={`text-3xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'} mb-4`}>
           Hai un'idea per un nuovo progetto?
         </h3>
-        <p className="text-gray-600 mb-6 max-w-lg mx-auto">
+        <p className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-300'} mb-6 max-w-lg mx-auto`}>
           Siamo sempre alla ricerca di nuove iniziative per la nostra scuola.
           Unisciti a noi o proponi la tua idea!
         </p>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Rss, Lock, GitFork, Cat, LayoutGrid, Cpu, Bot, Rocket, Youtube } from "lucide-react";
+import { Rss, Lock, GitFork, Cat, LayoutGrid, Cpu, Bot, Rocket, Youtube, User } from "lucide-react";
 import { articles } from "./articles";
 import { createSlug } from "../utils/slug";
 
@@ -47,17 +47,17 @@ export default function NewsletterPage() {
         <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-6">
           Il mondo dell'informatica evolve alla velocità della luce. Ogni giorno nascono nuove tecnologie, si scoprono vulnerabilità di sicurezza e si sviluppano strumenti innovativi che cambiano il modo in cui viviamo e lavoriamo. Restare aggiornati non è solo utile, ma una necessità.
         </p>
-        <div className="bg-indigo-50 p-6 rounded-xl shadow-md inline-flex items-center space-x-3 text-indigo-700 font-medium">
-          <Rss className="w-6 h-6" />
-          <span>Iscriviti per non perdere i nostri aggiornamenti!</span>
-          <a
-            href="#"
-            className="ml-4 bg-indigo-600 text-white py-2 px-5 rounded-full hover:bg-indigo-700 transition duration-300 shadow"
-          >
-            Iscriviti
-          </a>
-        </div>
-      </div>
+                  <div className="bg-gray-100 p-6 rounded-xl shadow-inner inline-flex items-center space-x-3 text-gray-500 font-medium">
+                    <Rss className="w-6 h-6" />
+                    <span>Iscriviti per non perdere i nostri aggiornamenti!</span>
+                    <button
+                      disabled
+                      className="ml-4 bg-gray-400 text-white py-2 px-5 rounded-full cursor-not-allowed"
+                    >
+                      Iscriviti
+                    </button>
+                    <span className="text-sm font-semibold text-gray-600">(Prossimamente)</span>
+                  </div>      </div>
 
       {/* Sezione Articoli */}
       <section className="mb-16">
@@ -85,6 +85,12 @@ export default function NewsletterPage() {
                   {article.icon}
                   <span>{article.category}</span>
                 </div>
+                {article.author && (
+                  <div className="flex items-center text-sm text-gray-500 mt-2">
+                    <User className="w-4 h-4 mr-2" />
+                    <span>{article.author}</span>
+                  </div>
+                )}
               </div>
             </Link>
           ))}

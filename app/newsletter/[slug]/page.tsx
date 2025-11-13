@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, User } from "lucide-react";
 import { createSlug } from "../../utils/slug";
 import { articles } from "../articles";
 
@@ -66,6 +66,12 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           <span>•</span>
           <span className="text-indigo-600">{article.category}</span>
         </div>
+        {article.author && (
+          <div className="flex items-center text-sm text-gray-500 mt-2">
+            <User className="w-4 h-4 mr-2" />
+            <span>{article.author}</span>
+          </div>
+        )}
 
         <h1 className="text-4xl font-bold text-gray-900 mb-4">{article.title}</h1>
         <p className="text-xl text-gray-600">{article.description}</p>
