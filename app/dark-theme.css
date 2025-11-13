@@ -215,3 +215,32 @@ body.dark {
 
 
 /* Add more specific dark theme styles below */
+
+/* Ensure common text/background utility classes are readable in dark mode */
+.dark .text-black {
+  color: #e5e7eb; /* tailwind gray-200-ish for good contrast on dark backgrounds */
+}
+
+.dark .text-white {
+  color: #ffffff;
+}
+
+.dark .text-gray-200 {
+  color: #e5e7eb;
+}
+
+.dark .text-gray-700 {
+  color: #d1d5db;
+}
+
+.dark .bg-gray-800 {
+  background-color: #111827; /* slightly darker background for card surfaces */
+}
+
+.dark .bg-gray-100 {
+  background-color: #374151; /* used for some light variant backgrounds in dark mode */
+}
+
+.dark .text-gray-100 {
+  color: #f3f4f6;
+}

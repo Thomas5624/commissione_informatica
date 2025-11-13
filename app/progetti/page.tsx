@@ -200,7 +200,7 @@ export default function ProgettiPage() {
       {/* Griglia Progetti (Nuova UX) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={`${index}-${theme}`} className={`${theme === 'light' ? 'bg-white' : 'bg-gray-800'} rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col`}>
+          <div key={`${index}-${theme}`} className={`${theme === 'light' ? 'bg-white' : 'bg-gray-800'} rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col transform hover:-translate-y-1`}>
             <div className="relative h-40 w-full">
               <Image
                 src={project.image}
@@ -217,31 +217,33 @@ export default function ProgettiPage() {
                 <div className="text-indigo-600">
                   {project.icon}
                 </div>
-                <span className={`inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full ${
-                  project.percentage === 100 
+                <span className={`inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full transition-colors duration-300 ${
+                  project.status === 'Completato' 
                     ? 'bg-green-100 text-green-800' 
-                    : 'bg-yellow-100 text-yellow-800'
+                    : project.status === 'In Sviluppo'
+                      ? 'bg-blue-100 text-blue-800'
+                      : 'bg-yellow-100 text-yellow-800'
                 }`}>
                   <Clock className="w-3 h-3 mr-1" /> {project.status}
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+              <h3 className={`text-2xl font-bold ${theme === 'light' ? 'text-black' : 'text-white'} mb-2`}>
                 {project.name}
               </h3>
-              <p className="text-gray-600 text-sm mb-4 flex-grow">
+              <p className={`${theme === 'light' ? 'text-black' : 'text-gray-300'} text-sm mb-4 flex-grow`}>
                 {project.description}
               </p>
 
               {/* Progresso */}
               <div className="mt-auto pt-4">
-                <div className="flex justify-between text-sm font-medium text-gray-600 mb-1">
+                <div className={`flex justify-between text-sm font-medium ${theme === 'light' ? 'text-black' : 'text-gray-300'} mb-1`}>
                   <span>Progresso</span>
                   <span className="text-indigo-600">{project.percentage}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                   <div
-                    className="bg-indigo-600 h-2.5 rounded-full"
+                    className="bg-indigo-600 h-2.5 rounded-full transition-all duration-500 ease-out"
                     style={{ width: `${project.percentage}%` }}
                   ></div>
                 </div>
@@ -276,11 +278,11 @@ export default function ProgettiPage() {
           {/* Modal Content */}
           <div 
             onClick={e => e.stopPropagation()}
-            className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] relative animate-modalOpen overflow-hidden flex flex-col"
+            className="bg-white dark:bg-gray-800 rounded-2xl max-w-3xl w-full max-h-[90vh] relative animate-modalOpen overflow-hidden flex flex-col transition-all duration-300 ease-out"
           >
             {/* Header sticky */}
-                                    <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md px-6 py-4 flex justify-between items-center">
-                                      <h2 className="text-2xl font-bold text-gray-800">{selectedProject.name}</h2>
+                                    <div className="sticky top-0 z-10 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md px-6 py-4 flex justify-between items-center">
+                                      <h2 className="text-2xl font-bold text-gray-800 dark:text-white">{selectedProject.name}</h2>
                                       <button
                                         onClick={() => setIsModalOpen(false)}
                                         className="p-2 hover:bg-gray-100/80 rounded-full transition-colors"
@@ -314,15 +316,15 @@ export default function ProgettiPage() {
 
                 {/* Features con stile card */}
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
                     <Rocket className="w-5 h-5 text-indigo-600" />
                     Funzionalità
                   </h3>
                   <div className="grid gap-3">
                     {selectedProject.documentation?.features.map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-lg hover:border-indigo-200 transition-colors">
+                      <div key={index} className="flex items-start gap-3 p-4 bg-white dark:bg-gray-700 rounded-lg hover:border-indigo-200 transition-colors">
                         <div className="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-2" />
-                        <p className="text-gray-600">{feature}</p>
+                        <p className="text-gray-600 dark:text-gray-300">{feature}</p>
                       </div>
                     ))}
                   </div>
@@ -330,7 +332,7 @@ export default function ProgettiPage() {
 
                 {/* Tech Stack con design moderno */}
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
                     <Code className="w-5 h-5 text-indigo-600" />
                     Stack Tecnologico
                   </h3>
@@ -348,14 +350,14 @@ export default function ProgettiPage() {
 
                 {/* Team con cards */}
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
                     <Users className="w-5 h-5 text-indigo-600" />
                     Team
                   </h3>
                   <div className="grid gap-3">
                     {selectedProject.documentation?.team.map((member, index) => (
-                      <div key={index} className="p-4 bg-white rounded-lg hover:border-indigo-200 transition-colors">
-                        <p className="text-gray-600">{member}</p>
+                      <div key={index} className="p-4 bg-white dark:bg-gray-700 rounded-lg hover:border-indigo-200 transition-colors">
+                        <p className="text-gray-600 dark:text-gray-300">{member}</p>
                       </div>
                     ))}
                   </div>
@@ -372,6 +374,17 @@ export default function ProgettiPage() {
                     >
                       <Github className="w-5 h-5" />
                       <span>Visualizza Repository</span>
+                    </a>
+                  )}
+                  {selectedProject.documentation?.liveSite && (
+                    <a
+                      href={selectedProject.documentation.liveSite}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-5 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
+                    >
+                      <Globe className="w-5 h-5" />
+                      <span>Visita il Sito Live</span>
                     </a>
                   )}
                   
